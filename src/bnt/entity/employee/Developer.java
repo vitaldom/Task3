@@ -1,9 +1,9 @@
-package bnt;
+package bnt.entity.employee;
 
 public class Developer extends Employee {
 
-    public Developer(double ratePerHour, int workdays) {
-        super(ratePerHour, workdays);
+    public Developer(String name, double ratePerHour, int workdays) {
+        super(name, ratePerHour, workdays);
     }
 
     public double getSalary(double bonus) {

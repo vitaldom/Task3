@@ -1,5 +1,9 @@
 package bnt;
 
+import bnt.entity.Company;
+import bnt.entity.employee.Developer;
+import bnt.entity.employee.Employee;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -27,6 +31,9 @@ public class Main {
 
 
         System.out.println(developer instanceof Developer);
+        Company Sony = new Company("Sony", 400000);
+
+        System.out.println(Sony);
 
 //        System.out.println("Developer's salary without bonus: " + developer.getSalary());
         System.out.println("Developer's salary with bonus: " + ((Developer) developer).getSalary(200));

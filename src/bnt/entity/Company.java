@@ -1,4 +1,8 @@
-package bnt;
+package bnt.entity;
+
+import bnt.service.SalaryService;
+import bnt.entity.employee.Developer;
+import bnt.entity.employee.Employee;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -44,27 +48,18 @@ public class Company {
         return budget - currentExpenses;
     }
 
-    private boolean preparePayment(double bonusForDevelopers) {         //checks if budget is sufficient before payment
 
-        double requiredBudget = 0;
-
-        for (Employee employee : employees) {
-
-            double employeeSalary = 0;
-
-            if (employee instanceof Developer) {
-                employeeSalary = ((Developer) employee).getSalary(bonusForDevelopers);
-            } else {
-                employeeSalary = employee.getSalary();
-            }
-            requiredBudget += employeeSalary;
-        }
-
-        return requiredBudget >= budget;
-    }
 
     public SalaryService getSalaryService() {
         return new SalaryService();
+    }
+
+    @Override
+    public String toString() {
+        return "Company{" +
+                "name='" + name + '\'' +
+                ", budget=" + budget +
+                '}';
     }
 
     public String getName() {
@@ -81,5 +76,9 @@ public class Company {
 
     public void setBudget(double budget) {
         this.budget = budget;
+    }
+
+    public Employee[] getEmployees() {
+        return employees;
     }
 }
